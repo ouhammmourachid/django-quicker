@@ -49,7 +49,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.project.wsgi.application'
-
+ASGI_APPLICATION = 'core.project.asgi.application'
 
 # Database
 
