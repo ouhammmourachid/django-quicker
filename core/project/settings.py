@@ -1,6 +1,6 @@
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = 'django-insecure-)iq0@yknd=#8dvias=(v=y@axx)!t2k&&1wbcm71@e&kjig!mi'
 
@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core.welcome.apps.WelcomeConfig',
 ]
 
 MIDDLEWARE = [
