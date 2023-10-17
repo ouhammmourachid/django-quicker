@@ -1,19 +1,25 @@
+BASE_COMMAND = poetry run python -m core.manage
+
 .PHONY: install
 install:
 	poetry install
 
 .PHONY: run-server
 run-server:
-	poetry run python -m core.manage runserver
+	$(BASE_COMMAND) runserver
 
 .PHONY: migrate
 migrate:
-	poetry run python -m core.manage migrate
+	$(BASE_COMMAND) migrate
 
 .PHONY: migrations
 migrations:
-	poetry run python -m core.manage makemigrations
+	$(BASE_COMMAND) makemigrations
 
 .PHONY: superuser
 superuser:
-	poetry run python -m core.manage createsuperuser
+	$(BASE_COMMAND) createsuperuser
+
+.PHONY: app
+app:
+	$(BASE_COMMAND) startapp $(name)
