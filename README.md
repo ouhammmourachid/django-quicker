@@ -1,8 +1,8 @@
-# Django Quick start
+## Django Quick start
 
 this is s open source template that is pre configured and ready to work with in django
 
-### get started with version-1.0.x:
+#### get started with version-1.0.x:
 
 1. clone the repo and checkout to `version-1.0.x` branch.
 
