@@ -1,7 +1,7 @@
 ## Django Quick start
 
 this is s open source template that is pre configured and ready to work with in django
-* [version-1.0.x](#get-started-with-version-1.0.x)
+* [version-1.0.x](#get-started-with-version-10x)
 
 ## Versions
 #### get started with `version-1.0.x`:
