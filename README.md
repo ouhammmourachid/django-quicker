@@ -84,8 +84,8 @@ INSTALLED_APPS = [
 - [ ] add the docker command to the `Makefile`.
 
 ## TODO for version 5.0.x:
-- [ ] add git hub actions for lint .
+- [ ] add git hub actions for lint.
 - [ ] add git hub actions for testing.
 - [ ] add git hub actions for integrating `codecov`.
 - [ ] add git hub actions for deploying the image to a repository. (dockerhub, ghr).
-
+- [ ] add `depandaboot` to update automatiquement update `Pypi` packages.
