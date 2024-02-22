@@ -68,7 +68,9 @@ INSTALLED_APPS = [
 - [ ] add Django split settings.
 - [ ] move settings to a new package `core.project.settings`.
 - [ ] move the default settings to `core.project.settings.__init__.py`.
-- [ ] Create template for additional settings like docker and others. 
+- [ ] Create a template for additional settings like docker and others.
+- [ ] add `LICENSE` type to the project .
+- [ ] upgrade the project to use version 5 of Django.
 
 ## TODO for version 3.0.x:
 - [ ] add lint tools like `mypy` , `flake8`.
