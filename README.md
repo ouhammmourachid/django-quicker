@@ -65,11 +65,11 @@ INSTALLED_APPS = [
 
 ## TODO for version 2.0.x:
 
-- [ ] add Django split settings.
+- [x] add Django split settings.
 - [ ] move settings to a new package `core.project.settings`.
 - [ ] move the default settings to `core.project.settings.__init__.py`.
 - [ ] Create a template for additional settings like docker and others.
-- [ ] add `LICENSE` type to the project .
+- [x] add `LICENSE` type to the project .
 - [ ] upgrade the project to use version 5 of Django.
 
 ## TODO for version 3.0.x:
