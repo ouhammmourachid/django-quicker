@@ -20,9 +20,14 @@ migrations:
 superuser:
 	$(BASE_COMMAND) createsuperuser
 
+
 .PHONY: app
 app:
+	$(eval name=$(filter-out $@,$(MAKECMDGOALS)))
 	$(BASE_COMMAND) startapp $(name)
+	mv $(name) core/
+%:
+	@:
 
 
 .PHONY: local-settings
