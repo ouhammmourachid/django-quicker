@@ -3,7 +3,8 @@
 this is s open source template that is pre-configured and ready to work with in Django
 * [version-1.0.x](#get-started-with-version-1.0.x)
 * [version-2.0.x](#get-started-with-version-2.0.x)
-* [version-2.0.x](#get-started-with-version-3.0.x)
+* [version-3.0.x](#get-started-with-version-3.0.x)
+* [version-4.0.x](#get-started-with-version-4.0.x)
 
 ## Versions
 #### get started with `version-1.0.x`:
@@ -100,6 +101,9 @@ for additional configuration you can change this files
 `.flake8`
 `.pre-commit-config.yaml`
 `mypy.ini`
+
+
+#### get started with `version-4.0.x`:
 
 
 ## TODO for version 5.0.x:
