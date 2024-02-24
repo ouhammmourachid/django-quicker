@@ -73,7 +73,7 @@ make the templates for the local settings so you can override the default settin
 make local-settings
 ```
 
-an easy way to create app 
+an easy way to create app
 
 ```bash
 make app AppName

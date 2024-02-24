@@ -56,4 +56,3 @@ up-dependencies-only:
 .PHONY: collectstatic
 collectstatic:
 	poetry run python -m core.manage collectstatic
-
