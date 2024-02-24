@@ -105,6 +105,17 @@ for additional configuration you can change this files
 
 #### get started with `version-4.0.x`:
 
+in this version i add support for `Dockerfile` .
+to run the app use
+
+```bash
+make build-up
+```
+to shut it down use
+
+```bash
+make down
+```
 
 ## TODO for version 5.0.x:
 - [ ] add git hub actions for lint.

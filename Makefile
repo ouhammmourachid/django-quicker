@@ -56,3 +56,18 @@ up-dependencies-only:
 .PHONY: collectstatic
 collectstatic:
 	poetry run python -m core.manage collectstatic
+
+.PHONY: build
+build:
+	docker compose build
+
+.PHONY: up
+up:
+	docker compose up -d
+
+.PHONY: build-up
+build-up:build up;
+
+.PHONY: down
+down:
+	docker compose down
