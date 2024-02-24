@@ -4,6 +4,15 @@ BASE_COMMAND = poetry run python -m core.manage
 install:
 	poetry install
 
+.PHONY: install-pre-commit
+install-pre-commit:
+	poetry run pre-commit uninstall && poetry run pre-commit install
+
+.PHONY: lint
+lint:
+	poetry run pre-commit run --all-files
+
+
 .PHONY: run-server
 run-server:
 	$(BASE_COMMAND) runserver
@@ -33,3 +42,18 @@ app:
 .PHONY: local-settings
 local-settings:
 	if [ ! -f "local/settings.dev.py" ]; then mkdir local && cp ./core/project/settings/templates/settings.dev.py local/settings.dev.py; fi
+
+
+.PHONY: update
+update: install migrate install-pre-commit;
+
+.PHONY: up-dependencies-only
+up-dependencies-only:
+	test -f .env || touch .env
+	docker-compose  -f docker-compose.dev.yaml up --force-recreate db
+
+
+.PHONY: collectstatic
+collectstatic:
+	poetry run python -m core.manage collectstatic
+
