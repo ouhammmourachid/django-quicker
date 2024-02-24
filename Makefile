@@ -23,3 +23,8 @@ superuser:
 .PHONY: app
 app:
 	$(BASE_COMMAND) startapp $(name)
+
+
+.PHONY: local-settings
+local-settings:
+	if [ ! -f "local/settings.dev.py" ]; then mkdir local && cp ./core/project/settings/templates/settings.dev.py local/settings.dev.py; fi
