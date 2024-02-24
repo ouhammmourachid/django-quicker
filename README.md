@@ -102,12 +102,6 @@ for additional configuration you can change this files
 `mypy.ini`
 
 
-## TODO for version 4.0.x:
-- [ ] add `Dockerfile` for building.
-- [ ] add `docker-compose.dev.yml` local dev.
-- [ ] add `docker-compose.yml` for deployment.
-- [ ] add the docker command to the `Makefile`.
-
 ## TODO for version 5.0.x:
 - [ ] add git hub actions for lint.
 - [ ] add git hub actions for testing.
