@@ -3,7 +3,8 @@
 this is s open source template that is pre-configured and ready to work with in Django
 * [version-1.0.x](#get-started-with-version-1.0.x)
 * [version-2.0.x](#get-started-with-version-2.0.x)
-* [version-2.0.x](#get-started-with-version-3.0.x)
+* [version-3.0.x](#get-started-with-version-3.0.x)
+* [version-4.0.x](#get-started-with-version-4.0.x)
 
 ## Versions
 #### get started with `version-1.0.x`:
@@ -102,11 +103,8 @@ for additional configuration you can change this files
 `mypy.ini`
 
 
-## TODO for version 4.0.x:
-- [ ] add `Dockerfile` for building.
-- [ ] add `docker-compose.dev.yml` local dev.
-- [ ] add `docker-compose.yml` for deployment.
-- [ ] add the docker command to the `Makefile`.
+#### get started with `version-4.0.x`:
+
 
 ## TODO for version 5.0.x:
 - [ ] add git hub actions for lint.
