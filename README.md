@@ -1,7 +1,8 @@
 ## Django Quick start
 
 this is s open source template that is pre-configured and ready to work with in Django
-* [version-1.0.x](#get-started-with-version-10x)
+* [version-1.0.x](#get-started-with-version-1.0.x)
+* [version-2.0.x](#get-started-with-version-2.0.x)
 
 ## Versions
 #### get started with `version-1.0.x`:
@@ -63,14 +64,23 @@ INSTALLED_APPS = [
 ...
 ```
 
-## TODO for version 2.0.x:
+#### get started with `version-1.0.x`:
+this versioon support split settings to orgnize the settings in deferent files and make it to integrate local setting.
 
-- [x] add Django split settings.
-- [ ] move settings to a new package `core.project.settings`.
-- [ ] move the default settings to `core.project.settings.__init__.py`.
-- [ ] Create a template for additional settings like docker and others.
-- [x] add `LICENSE` type to the project .
-- [ ] upgrade the project to use version 5 of Django.
+make the templates for the local settings so you can override the default settings.
+
+```bash
+make local-settings
+```
+
+an easy way to create app 
+
+```bash
+make app AppName
+```
+it also uses the django `v5.0.2`.
+
+
 
 ## TODO for version 3.0.x:
 - [ ] add lint tools like `mypy` , `flake8`.
