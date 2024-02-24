@@ -5,6 +5,7 @@ this is s open source template that is pre-configured and ready to work with in 
 * [version-2.0.x](#get-started-with-version-2.0.x)
 * [version-3.0.x](#get-started-with-version-3.0.x)
 * [version-4.0.x](#get-started-with-version-4.0.x)
+* [version-5.0.x](#get-started-with-version-5.0.x)
 
 ## Versions
 #### get started with `version-1.0.x`:
@@ -117,9 +118,6 @@ to shut it down use
 make down
 ```
 
-## TODO for version 5.0.x:
-- [ ] add git hub actions for lint.
-- [ ] add git hub actions for testing.
-- [ ] add git hub actions for integrating `codecov`.
-- [ ] add git hub actions for deploying the image to a repository. (dockerhub, ghr).
-- [ ] add `depandaboot` to update automatiquement update `Pypi` packages.
+#### get started with `version-5.0.x`:
+
+add same templates for github actions.
