@@ -1,10 +1,10 @@
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
-SECRET_KEY = 'django-insecure-)iq0@yknd=#8dvias=(v=y@axx)!t2k&&1wbcm71@e&kjig!mi'
+SECRET_KEY = NotImplemented
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
