@@ -3,6 +3,7 @@
 this is s open source template that is pre-configured and ready to work with in Django
 * [version-1.0.x](#get-started-with-version-1.0.x)
 * [version-2.0.x](#get-started-with-version-2.0.x)
+* [version-2.0.x](#get-started-with-version-3.0.x)
 
 ## Versions
 #### get started with `version-1.0.x`:
@@ -64,7 +65,7 @@ INSTALLED_APPS = [
 ...
 ```
 
-#### get started with `version-1.0.x`:
+#### get started with `version-2.0.x`:
 this versioon support split settings to orgnize the settings in deferent files and make it to integrate local setting.
 
 make the templates for the local settings so you can override the default settings.
@@ -80,12 +81,26 @@ make app AppName
 ```
 it also uses the django `v5.0.2`.
 
+#### get started with `version-3.0.x`:
 
+in this version we add support fro pre-commit with flake8 and mypy and additional tools
 
-## TODO for version 3.0.x:
-- [ ] add lint tools like `mypy` , `flake8`.
-- [ ] add pre-commit tools to the project.
-- [ ] add the new command to the `Makefile`.
+to install pre-commit hocks use
+
+```bash
+make install-pre-commit
+```
+to make lint operation use this
+
+```bash
+make lint
+```
+for additional configuration you can change this files
+`.editorconfig`
+`.flake8`
+`.pre-commit-config.yaml`
+`mypy.ini`
+
 
 ## TODO for version 4.0.x:
 - [ ] add `Dockerfile` for building.
