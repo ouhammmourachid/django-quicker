@@ -1,0 +1,6 @@
+[book]
+authors = ["ouhammou rachid"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Django Quicker"

@@ -5,6 +5,8 @@
 DJANGO_RUN		= poetry run python -m core.manage
 POETRY_RUN		= poetry run
 DOCKER_COMPOSE		= docker compose
+CARGO_INSTALL		= cargo install
+DOCS_PATH		= docs
 
 
 # Commands
@@ -79,3 +81,20 @@ build-up:build up;
 .PHONY: docker/down
 docker/down:
 	$(DOCKER_COMPOSE) down
+
+.PHONY: install/cargo
+install/cargo:
+	curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+.PHONY: install/mdbook
+install/mdbook:
+	$(CARGO_INSTALL) mdbook
+
+
+.PHONY: docs/build
+docs/build:
+	cd $(DOCS_PATH) && mdbook build
+
+.PHONY: docs/serve
+docs/serve:
+	cd $(DOCS_PATH) && mdbook serve --open
