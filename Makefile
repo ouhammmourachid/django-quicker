@@ -7,6 +7,8 @@ POETRY_RUN		= poetry run
 DOCKER_COMPOSE		= docker compose
 CARGO_INSTALL		= cargo install
 DOCS_PATH		= docs
+PRE_COMMIT_CMD		= $(POETRY_RUN) pre-commit
+
 
 
 # Commands
@@ -16,11 +18,11 @@ install:
 
 .PHONY: install-pre-commit
 install-pre-commit:
-	$(POETRY_RUN) pre-commit uninstall && $(POETRY_RUN) pre-commit install
+	$(PRE_COMMIT_CMD) uninstall && $(PRE_COMMIT_CMD) install
 
 .PHONY: lint
 lint:
-	$(POETRY_RUN) pre-commit run --all-files
+	$(PRE_COMMIT_CMD) run --all-files
 
 
 .PHONY: run-server
@@ -65,7 +67,7 @@ up-dependencies-only:
 
 .PHONY: collectstatic
 collectstatic:
-	$(POETRY_RUN) python -m core.manage collectstatic
+	$(DJANGO_RUN) collectstatic
 
 .PHONY: docker/build
 docker/build:
