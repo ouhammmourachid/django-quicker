@@ -1,39 +1,47 @@
-BASE_COMMAND = poetry run python -m core.manage
 
+# Makefile for Django project
+
+# Variables
+DJANGO_RUN 		= poetry run python -m core.manage
+POETRY_RUN 		= poetry run
+DOCKER_COMPOSE 	= docker compose
+
+
+# Commands
 .PHONY: install
 install:
 	poetry install
 
 .PHONY: install-pre-commit
 install-pre-commit:
-	poetry run pre-commit uninstall && poetry run pre-commit install
+	$(POETRY_RUN) pre-commit uninstall && $(POETRY_RUN) pre-commit install
 
 .PHONY: lint
 lint:
-	poetry run pre-commit run --all-files
+	$(POETRY_RUN) pre-commit run --all-files
 
 
 .PHONY: run-server
 run-server:
-	$(BASE_COMMAND) runserver
+	$(DJANGO_RUN) runserver
 
 .PHONY: migrate
 migrate:
-	$(BASE_COMMAND) migrate
+	$(DJANGO_RUN) migrate
 
 .PHONY: migrations
 migrations:
-	$(BASE_COMMAND) makemigrations
+	$(DJANGO_RUN) makemigrations
 
 .PHONY: superuser
 superuser:
-	$(BASE_COMMAND) createsuperuser
+	$(DJANGO_RUN) createsuperuser
 
 
 .PHONY: app
 app:
 	$(eval name=$(filter-out $@,$(MAKECMDGOALS)))
-	$(BASE_COMMAND) startapp $(name)
+	$(DJANGO_RUN) startapp $(name)
 	mv $(name) core/
 %:
 	@:
@@ -50,24 +58,24 @@ update: install migrate install-pre-commit;
 .PHONY: up-dependencies-only
 up-dependencies-only:
 	test -f .env || touch .env
-	docker-compose  -f docker-compose.dev.yaml up --force-recreate db
+	$(DOCKER_COMPOSE)  -f docker-compose.dev.yaml up --force-recreate db
 
 
 .PHONY: collectstatic
 collectstatic:
-	poetry run python -m core.manage collectstatic
+	$(POETRY_RUN) python -m core.manage collectstatic
 
-.PHONY: build
-build:
-	docker compose build
+.PHONY: docker/build
+docker/build:
+	$(DOCKER_COMPOSE) build
 
-.PHONY: up
-up:
-	docker compose up -d
+.PHONY: docker/up
+docker/up:
+	$(DOCKER_COMPOSE) up -d
 
 .PHONY: build-up
 build-up:build up;
 
-.PHONY: down
-down:
-	docker compose down
+.PHONY: docker/down
+docker/down:
+	$(DOCKER_COMPOSE) down
