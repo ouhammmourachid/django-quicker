@@ -121,6 +121,9 @@ make docker/down
 #### get started with `version-5.0.x`:
 
 add same templates for github actions.
+
 replace `flake8` with `ruff` for linting.
+
 add `codespell` to .pre-commit-config.yaml.
+
 change the name of the template from `django-quick-start` to `django-quicker`
