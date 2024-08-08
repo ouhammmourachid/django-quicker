@@ -2,9 +2,9 @@
 # Makefile for Django project
 
 # Variables
-DJANGO_RUN 		= poetry run python -m core.manage
-POETRY_RUN 		= poetry run
-DOCKER_COMPOSE 	= docker compose
+DJANGO_RUN		= poetry run python -m core.manage
+POETRY_RUN		= poetry run
+DOCKER_COMPOSE		= docker compose
 
 
 # Commands
