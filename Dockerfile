@@ -15,7 +15,7 @@ RUN set -xe \
     && apt-get install build-essential \
     && pip install pip==23.0 virtualenvwrapper poetry==1.6.1
 
-# For image build time optimization purposes we install depdendencies here (so changes in the source code will not
+# For image build time optimization purposes we install dependencies here (so changes in the source code will not
 # require dependencies reinstallation)
 COPY ["pyproject.toml", "poetry.lock", "./"]
 RUN poetry run pip install pip==23.0

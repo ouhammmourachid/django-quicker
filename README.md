@@ -68,7 +68,7 @@ INSTALLED_APPS = [
 ```
 
 #### get started with `version-2.0.x`:
-this versioon support split settings to orgnize the settings in deferent files and make it to integrate local setting.
+this version support split settings to orgnize the settings in deferent files and make it to integrate local setting.
 
 make the templates for the local settings so you can override the default settings.
 
@@ -85,7 +85,7 @@ it also uses the django `v5.0.2`.
 
 #### get started with `version-3.0.x`:
 
-in this version we add support fro pre-commit with flake8 and mypy and additional tools
+in this version we add support for pre-commit with flake8 and mypy and additional tools
 
 to install pre-commit hocks use
 
