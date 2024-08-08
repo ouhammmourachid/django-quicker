@@ -1,4 +1,4 @@
-## Django Quick start
+## Django Quicker
 
 this is s open source template that is pre-configured and ready to work with in Django
 * [version-1.0.x](#get-started-with-version-1.0.x)
@@ -121,3 +121,6 @@ make down
 #### get started with `version-5.0.x`:
 
 add same templates for github actions.
+replace `flake8` with `ruff` for linting.
+add `codespell` to .pre-commit-config.yaml.
+change the name of the template from `django-quick-start` to `django-quicker`
