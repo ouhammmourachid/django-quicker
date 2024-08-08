@@ -115,7 +115,7 @@ make build-up
 to shut it down use
 
 ```bash
-make down
+make docker/down
 ```
 
 #### get started with `version-5.0.x`:
