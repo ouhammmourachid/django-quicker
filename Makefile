@@ -11,7 +11,7 @@ DOCS_PATH				= docs
 
 # Variables paths
 PROJECT_SETTINGS_TEMPLATE_PATH		= core/project/settings/templates/settings.dev.py
-
+DOCKER_COMPOSE_DEV_PATH			= docker-compose.dev.yaml
 
 
 # Commands
