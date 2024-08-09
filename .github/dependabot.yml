@@ -1,18 +1,18 @@
-
+---
 version: 2
 updates:
-  - package-ecosystem: "pip" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly" # Check for updates Weekly
-    labels:
-      - "dependencies"
-      - "pip"
+    - package-ecosystem: pip # See documentation for possible values
+      directory: / # Location of package manifests
+      schedule:
+          interval: weekly # Check for updates Weekly
+      labels:
+          - dependencies
+          - pip
 
-  - package-ecosystem: "github-actions" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly" # Check for updates Weekly
-    labels:
-      - "dependencies"
-      - "github-actions"
+    - package-ecosystem: github-actions # See documentation for possible values
+      directory: / # Location of package manifests
+      schedule:
+          interval: weekly # Check for updates Weekly
+      labels:
+          - dependencies
+          - github-actions

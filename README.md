@@ -120,7 +120,7 @@ make docker/down
 
 #### get started with `version-5.0.x`:
 
-add same templates for github actions.
+add some templates for github actions.
 
 replace `flake8` with `ruff` for linting.
 
