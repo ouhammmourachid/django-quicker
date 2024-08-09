@@ -10,7 +10,7 @@ CARGO_INSTALL				= cargo install
 DOCS_PATH				= docs
 
 # Variables paths
-PROJECT_SETTINGS_TEMPLATE_PATH			= core/project/settings/templates/settings.dev.py
+PROJECT_SETTINGS_TEMPLATE_PATH		= core/project/settings/templates/settings.dev.py
 
 
 
