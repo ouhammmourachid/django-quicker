@@ -65,7 +65,7 @@ update: install migrate install-pre-commit;
 .PHONY: up-dependencies-only
 up-dependencies-only:
 	test -f .env || touch .env
-	$(DOCKER_COMPOSE)  -f docker-compose.dev.yaml up --force-recreate db
+	$(DOCKER_COMPOSE)  -f $(DOCKER_COMPOSE_DEV_PATH) up --force-recreate db
 
 
 .PHONY: collectstatic
