@@ -1,17 +1,18 @@
 
-# Makefile for Django project
+# default target
+.DEFAULT_GOAL			:=run-server
 
 # Variables commands
-POETRY_RUN				= poetry run
-DJANGO_RUN				= $(POETRY_RUN) python -m core.manage
-PRE_COMMIT_CMD				= $(POETRY_RUN) pre-commit
-DOCKER_COMPOSE				= docker compose
-CARGO_INSTALL				= cargo install
-DOCS_PATH				= docs
+POETRY_RUN				:= poetry run
+DJANGO_RUN				:= $(POETRY_RUN) python -m core.manage
+PRE_COMMIT_CMD				:= $(POETRY_RUN) pre-commit
+DOCKER_COMPOSE				:= docker compose
+CARGO_INSTALL				:= cargo install
+DOCS_PATH				:= docs
 
 # Variables paths
-PROJECT_SETTINGS_TEMPLATE_PATH		= core/project/settings/templates/settings.dev.py
-DOCKER_COMPOSE_DEV_PATH			= docker-compose.dev.yaml
+PROJECT_SETTINGS_TEMPLATE_PATH		:= core/project/settings/templates/settings.dev.py
+DOCKER_COMPOSE_DEV_PATH			:= docker-compose.dev.yaml
 
 
 # Commands
@@ -103,3 +104,38 @@ docs/build:
 .PHONY: docs/serve
 docs/serve:
 	cd $(DOCS_PATH) && mdbook serve --open
+
+
+# Provide quick help for common Makefile targets.
+.PHONY: help
+help:
+	@echo "run 'make' to run the the django server"
+	@echo ""
+	@echo "or 'make <target>' where <target> is one of the following:"
+	@echo ""
+	@echo "  install				Install the project dependencies"
+	@echo "  install-pre-commit			Install pre-commit hooks"
+	@echo "  lint					Run pre-commit hooks"
+	@echo ""
+	@echo "  run-server				Run the django server"
+	@echo "  migrate				Apply migrations"
+	@echo "  migrations				Create migrations"
+	@echo "  superuser				Create superuser"
+	@echo "  app <name>				Create a new app"
+	@echo ""
+	@echo "  local-settings			Create local settings file"
+	@echo "  update				Install dependencies, apply migrations and install pre-commit hooks"
+	@echo "  up-dependencies-only			Up only the dependencies"
+	@echo "  collectstatic				Collect static files"
+	@echo ""
+	@echo "  docker/build				Build the docker images"
+	@echo "  docker/up				Up the docker containers"
+	@echo "  build-up				Build and up the docker containers"
+	@echo "  docker/down				Down the docker containers"
+	@echo ""
+	@echo "  install/cargo				Install cargo"
+	@echo "  install/mdbook			Install mdbook"
+	@echo "  docs/build				Build the documentation"
+	@echo "  docs/serve				Serve the documentation"
+	@echo ""
+	@echo "For more information, see the README.md file."
