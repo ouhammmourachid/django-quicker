@@ -2,15 +2,15 @@
 # Makefile for Django project
 
 # Variables commands
-POETRY_RUN		= poetry run
-DJANGO_RUN		= $(POETRY_RUN) python -m core.manage
-PRE_COMMIT_CMD		= $(POETRY_RUN) pre-commit
-DOCKER_COMPOSE		= docker compose
-CARGO_INSTALL		= cargo install
-DOCS_PATH		= docs
+POETRY_RUN				= poetry run
+DJANGO_RUN				= $(POETRY_RUN) python -m core.manage
+PRE_COMMIT_CMD				= $(POETRY_RUN) pre-commit
+DOCKER_COMPOSE				= docker compose
+CARGO_INSTALL				= cargo install
+DOCS_PATH				= docs
 
 # Variables paths
-PROJECT_SETTINGS_TEMPLATE_PATH	= core/project/settings/templates/settings.dev.py
+PROJECT_SETTINGS_TEMPLATE_PATH				= core/project/settings/templates/settings.dev.py
 
 
 
