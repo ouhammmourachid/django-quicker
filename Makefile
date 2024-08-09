@@ -1,13 +1,16 @@
 
 # Makefile for Django project
 
-# Variables
+# Variables commands
 POETRY_RUN		= poetry run
 DJANGO_RUN		= $(POETRY_RUN) python -m core.manage
+PRE_COMMIT_CMD		= $(POETRY_RUN) pre-commit
 DOCKER_COMPOSE		= docker compose
 CARGO_INSTALL		= cargo install
 DOCS_PATH		= docs
-PRE_COMMIT_CMD		= $(POETRY_RUN) pre-commit
+
+# Variables paths
+PROJECT_SETTINGS_TEMPLATE_PATH	= core/project/settings/templates/settings.dev.py
 
 
 
@@ -53,7 +56,7 @@ app:
 
 .PHONY: local-settings
 local-settings:
-	if [ ! -f "local/settings.dev.py" ]; then mkdir local && cp ./core/project/settings/templates/settings.dev.py local/settings.dev.py; fi
+	if [ ! -f "local/settings.dev.py" ]; then mkdir local && cp $(PROJECT_SETTINGS_TEMPLATE_PATH) local/settings.dev.py; fi
 
 
 .PHONY: update
