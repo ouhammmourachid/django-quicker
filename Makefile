@@ -1,6 +1,6 @@
 
 # default target
-.DEFAULT_GOAL			:=run-server
+.DEFAULT_GOAL				:=run-server
 
 # Variables commands
 POETRY_RUN				:= poetry run
@@ -8,9 +8,10 @@ DJANGO_RUN				:= $(POETRY_RUN) python -m core.manage
 PRE_COMMIT_CMD				:= $(POETRY_RUN) pre-commit
 DOCKER_COMPOSE				:= docker compose
 CARGO_INSTALL				:= cargo install
-DOCS_PATH				:= docs
+
 
 # Variables paths
+DOCS_PATH				:= docs
 PROJECT_SETTINGS_TEMPLATE_PATH		:= core/project/settings/templates/settings.dev.py
 DOCKER_COMPOSE_DEV_PATH			:= docker-compose.dev.yaml
 
