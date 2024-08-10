@@ -1,6 +1,6 @@
 
 # default target
-.DEFAULT_GOAL				:=run-server
+.DEFAULT_GOAL				:= run-server
 
 # Variables commands
 POETRY_RUN				:= poetry run
