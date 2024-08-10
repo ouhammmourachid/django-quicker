@@ -1,129 +1,120 @@
-## Django Quicker
+# Django Quicker
 
-this is s open source template that is pre-configured and ready to work with in Django
-* [version-1.0.x](#get-started-with-version-1.0.x)
-* [version-2.0.x](#get-started-with-version-2.0.x)
-* [version-3.0.x](#get-started-with-version-3.0.x)
-* [version-4.0.x](#get-started-with-version-4.0.x)
-* [version-5.0.x](#get-started-with-version-5.0.x)
+[![License: MIT](https://img.shields.io/github/license/ouhammmourachid/django-quicker)](https://github.com/ouhammmourachid/django-quicker/blob/main/LICENSE)
+[![ruff badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Backend Framework](https://img.shields.io/badge/Django-RESTful_API-0C4B33?logo=django)](https://www.djangoproject.com/)
+[![Database](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql)](https://www.postgresql.org/)
 
-## Versions
-#### get started with `version-1.0.x`:
+Django Quicker is a Django template that helps you to start your Django project quickly. It includes a lot of features that you will need in your project.
 
-1. clone the repo and checkout to the `version-1.0.x` branch.
 
-```bash
-git clone https://github.com/ouhammmourachid/django-quick-start.git
-git checkout version-1.0.x
+## Features
+
+- Django 5.1
+- Django REST framework
+- PostgreSQL
+- Docker
+- Docker Compose
+- Github Actions
+- linters (ruff,mypy,codespell)
+
+## Getting Started
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Python](https://www.python.org/downloads/)
+- [Poetry](https://python-poetry.org/docs/)
+- [Git](https://git-scm.com/downloads)
+
+
+### Installation
+
+1. Clone the repo
+
+```sh
+git clone https://github.com/ouhammmourachid/django-quicker.git
+cd django-quicker
 ```
 
-2. run the initial app.
+2. get help command
 
-```bash
-make migrations
-make migrate
-make superuser
-make run-server
+```sh
+$ make help
+run 'make' to run the the django server
+
+or 'make <target>' where <target> is one of the following:
+
+  install                               Install the project dependencies
+  install-pre-commit                    Install pre-commit hooks
+  lint                                  Run pre-commit hooks
+
+  run-server                            Run the django server
+  migrate                               Apply migrations
+  migrations                            Create migrations
+  superuser                             Create superuser
+  app <name>                            Create a new app
+
+  local-settings                        Create local settings file
+  update                                Install dependencies, apply migrations and install pre-commit hooks
+  up-dependencies-only                  Up only the dependencies
+  collectstatic                         Collect static files
+
+  docker/build                          Build the docker images
+  docker/up                             Up the docker containers
+  build-up                              Build and up the docker containers
+  docker/down                           Down the docker containers
+
+  install/cargo                         Install cargo
+  install/mdbook                        Install mdbook
+  docs/build                            Build the documentation
+  docs/serve                            Serve the documentation
+
+For more information, see the README.md file.
 ```
 
-and then access the app on [local host](http://127.0.0.1:8000/)
+3. Install the project dependencies
 
-3. create your app like this.
-
-delete the `welcome` app (optional) `rm -rf core/welcome`.
-
-remove the app from the list of installed apps on `core/project/settings.py`
-
-```python
-...
-INSTALLED_APPS = [
-    ...
-    # 'core.welcome.apps.WelcomeConfig',
-]
-...
-```
-make a new app using this command.
-
-```bash
-make app name=AppName
-cp AppName core/
-```
-change the app configuration in the `core/AppName/apps.py`
-```python
-...
-class AppNameConfig(AppConfig):
-    ...
-    name = 'core.AppName'
-...
-```
-and make sure to add the configuration to the installed apps list in the `core/project/settings.py`.
-
-```python
-...
-INSTALLED_APPS = [
-    ...
-    'core.AppName.apps.AppNameConfig',
-]
-...
+```sh
+make install
 ```
 
-#### get started with `version-2.0.x`:
-this version support split settings to orgnize the settings in deferent files and make it to integrate local setting.
+4. Create a local settings file
 
-make the templates for the local settings so you can override the default settings.
-
-```bash
+```sh
 make local-settings
 ```
 
-an easy way to create app
+5. Apply migrations
 
-```bash
-make app AppName
-```
-it also uses the django `v5.0.2`.
-
-#### get started with `version-3.0.x`:
-
-in this version we add support for pre-commit with flake8 and mypy and additional tools
-
-to install pre-commit hocks use
-
-```bash
-make install-pre-commit
-```
-to make lint operation use this
-
-```bash
-make lint
-```
-for additional configuration you can change this files
-`.editorconfig`
-`.flake8`
-`.pre-commit-config.yaml`
-`mypy.ini`
-
-
-#### get started with `version-4.0.x`:
-
-in this version i add support for `Dockerfile` .
-to run the app use
-
-```bash
-make build-up
-```
-to shut it down use
-
-```bash
-make docker/down
+```sh
+make migrate
 ```
 
-#### get started with `version-5.0.x`:
+6. Create a superuser
 
-add some templates for github actions.
+```sh
+make superuser
+```
 
-replace `flake8` with `ruff` for linting.
+7. Run the Django server
 
-add `codespell` to .pre-commit-config.yaml.
+```sh
+make run-server
+```
 
-change the name of the template from `django-quick-start` to `django-quicker`
+8. Open your browser and go to [http://localhost:8000](http://localhost:8000)
+
+9. You can access the Django admin panel by going to [http://localhost:8000/admin](http://localhost:8000/admin)
+
+10. You can access the Django REST framework by going to [http://localhost:8000/api](http://localhost:8000/api)
+
+## License
+
+Distributed under the [MIT License](LICENSE).
+
+
+## Contact
+
+If you have any questions or want to get in touch, you can reach out to me at [rachidouhammou21@gmail.com](rachidouhammou21@gmail.com).
