@@ -74,6 +74,9 @@ up-dependencies-only:
 collectstatic:
 	$(DJANGO_RUN) collectstatic
 
+shell:
+	$(DJANGO_RUN) shell
+
 .PHONY: docker/build
 docker/build:
 	$(DOCKER_COMPOSE) build
@@ -123,6 +126,7 @@ help:
 	@echo "  migrations				Create migrations"
 	@echo "  superuser				Create superuser"
 	@echo "  app <name>				Create a new app"
+	@echo "  shell					Run the django shell"
 	@echo ""
 	@echo "  local-settings			Create local settings file"
 	@echo "  update				Install dependencies, apply migrations and install pre-commit hooks"
