@@ -1,3 +1,11 @@
-# from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-# Create your views here.
+from core.project.permissions import IsAdminAuthenticated
+
+
+class WelcomeView(APIView):
+    permission_classes = [IsAdminAuthenticated]
+
+    def get(self, request):
+        return Response({"message": "Welcome from Django Quicker API!"})
