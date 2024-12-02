@@ -16,7 +16,7 @@ dj-split-settings = "^0.1.2"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.0.1"
-pytest = "^8.3.2"
+pytest = "^8.3.4"
 codecov = "^2.1.13"
 pytest-cov = "^6.0.0"
 ruff = "^0.8.0"
