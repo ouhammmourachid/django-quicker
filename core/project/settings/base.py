@@ -7,6 +7,8 @@ SECRET_KEY = NotImplemented
 
 DEBUG = False
 
+API_VERSION: str = "v1"
+
 ALLOWED_HOSTS: list[str] = []
 
 # Application definition
@@ -20,6 +22,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core.welcome.apps.WelcomeConfig",
     "rest_framework_simplejwt",
+    "core.accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
@@ -102,3 +105,5 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+AUTH_USER_MODEL = "accounts.User"
