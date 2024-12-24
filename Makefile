@@ -30,8 +30,8 @@ lint:
 	$(PRE_COMMIT_CMD) run --all-files
 
 
-.PHONY: run-server
-run-server:
+.PHONY: runserver
+runserver:
 	$(DJANGO_RUN) runserver
 
 .PHONY: migrate

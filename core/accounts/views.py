@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from .models import User
 from .permissions import Permission, IsAuthenticated
@@ -29,3 +30,38 @@ class UserViewSet(ModelViewSet):
         user.is_active = False
         user.save()
         return Response({"detail": "User account has been deactivated."}, status=status.HTTP_200_OK)
+
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+
+        if response.status_code == 200:
+            # Set refresh token in httpOnly cookie
+            refresh_token = response.data.pop("refresh")  # Remove from response body
+            response.set_cookie(
+                "refresh",
+                refresh_token,
+                httponly=True,
+                secure=True,  # Only send over HTTPS
+                samesite="Lax",
+                max_age=settings.SIMPLE_JWT["REFRESH_TOKEN_LIFETIME"].total_seconds(),
+            )
+        return response
+
+
+class CustomTokenRefreshView(TokenRefreshView):
+    def post(self, request, *args, **kwargs):
+        refresh_token = request.COOKIES.get("refresh")
+        if not refresh_token:
+            return Response(
+                {"error": "No refresh token found in cookies"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        data = request.data.copy()  # Copy the data to make it mutable
+        data["refresh"] = refresh_token
+
+        # Replace the request's data with the updated version
+        request._full_data = data
+        return super().post(request, *args, **kwargs)
