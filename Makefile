@@ -77,13 +77,22 @@ collectstatic:
 shell:
 	$(DJANGO_RUN) shell
 
+.PHONY: api-version
+api-version:
+	$(DJANGO_RUN) shell -c "from django.conf import settings; print(settings.API_VERSION)"
+
+.PHONY: image/build
+image/build:
+	@API_VERSION=$$($(DJANGO_RUN) shell -c "from django.conf import settings; print(settings.API_VERSION)") && \
+	docker build -t hotmix:$$API_VERSION -t hotmix:latest .
+
 .PHONY: docker/build
 docker/build:
 	$(DOCKER_COMPOSE) build
 
-.PHONY: docker/up
-docker/up:
-	$(DOCKER_COMPOSE) up -d
+.PHONY: docker/dev/up
+docker/dev/up:
+	$(DOCKER_COMPOSE) -f docker-compose.dev.yaml up -d
 
 .PHONY: build-up
 build-up:build up;

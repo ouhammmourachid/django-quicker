@@ -4,10 +4,10 @@ WORKDIR /opt/project
 
 EXPOSE 8000
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONPATH .
-ENV APP_NAME_SETTINGS_IN_DOCKER true
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=.
+ENV HOTMIX_IN_DOCKER=true
 
 
 RUN set -xe \
@@ -22,11 +22,12 @@ RUN poetry run pip install pip==23.0
 RUN poetry run pip install daphne
 
 
-RUN poetry install --no-root
+RUN poetry install --only main --no-root
 
 COPY ["README.md", "Makefile", "./"]
 COPY core core
-RUN poetry install  # this installs just the source code itself, since dependencies are installed before
+COPY local local
+RUN poetry install --only main  # this installs just the source code itself, since dependencies are installed before
 
 COPY scripts/dockerized-core-run.sh ./run.sh
 RUN chmod a+x run.sh
