@@ -24,12 +24,11 @@ class Permission(BasePermission):
             self.map_request_to_permission(request, view)
             in self.permissions[request.user.role]
         )
-    
+
     def has_object_permission(self, request, view, obj):
         if request.user.role == "admin":
             return True
         return obj == request.user
-
 
     def map_request_to_permission(self, request, view):
         method_value = {

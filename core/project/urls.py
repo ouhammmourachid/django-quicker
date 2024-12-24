@@ -13,7 +13,6 @@ urlpatterns = [
     # Api info
     path(f"{base}/info/", api_info, name="api-info"),
     path(f"{base}/", api_info, name="api-info"),
-    
     # include other app urls
     path(f"{base}/", include("core.accounts.urls")),
     path(f"{base}/", include("core.welcome.urls")),
