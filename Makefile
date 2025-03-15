@@ -1,11 +1,11 @@
 
 # default target
-.DEFAULT_GOAL				:= run-server
+.DEFAULT_GOAL				:= run/server
 
 # Variables commands
-POETRY_RUN				:= poetry run
-DJANGO_RUN				:= $(POETRY_RUN) python -m core.manage
-PRE_COMMIT_CMD				:= $(POETRY_RUN) pre-commit
+UV_RUN				:= uv run
+DJANGO_RUN				:= $(UV_RUN) -m core.manage
+PRE_COMMIT_CMD				:= $(UV_RUN) pre-commit
 DOCKER_COMPOSE				:= docker compose
 CARGO_INSTALL				:= cargo install
 
@@ -17,9 +17,9 @@ DOCKER_COMPOSE_DEV_PATH			:= docker-compose.dev.yaml
 
 
 # Commands
-.PHONY: install
-install:
-	poetry install
+.PHONY: sync
+sync:
+	uv sync
 
 .PHONY: install-pre-commit
 install-pre-commit:
@@ -30,8 +30,8 @@ lint:
 	$(PRE_COMMIT_CMD) run --all-files
 
 
-.PHONY: runserver
-runserver:
+.PHONY: run/server
+run/server:
 	$(DJANGO_RUN) runserver
 
 .PHONY: migrate
@@ -126,11 +126,11 @@ help:
 	@echo ""
 	@echo "or 'make <target>' where <target> is one of the following:"
 	@echo ""
-	@echo "  install				Install the project dependencies"
+	@echo "  sync				Install the project dependencies"
 	@echo "  install-pre-commit			Install pre-commit hooks"
 	@echo "  lint					Run pre-commit hooks"
 	@echo ""
-	@echo "  run-server				Run the django server"
+	@echo "  run/server				Run the django server"
 	@echo "  migrate				Apply migrations"
 	@echo "  migrations				Create migrations"
 	@echo "  superuser				Create superuser"
