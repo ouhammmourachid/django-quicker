@@ -25,7 +25,7 @@ Django Quicker is a Django template that helps you to start your Django project 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Python](https://www.python.org/downloads/)
-- [Poetry](https://python-poetry.org/docs/)
+- [uv](https://docs.astral.sh/uv/)
 - [Git](https://git-scm.com/downloads)
 
 
@@ -46,15 +46,16 @@ run 'make' to run the the django server
 
 or 'make <target>' where <target> is one of the following:
 
-  install                               Install the project dependencies
+  sync                          Install the project dependencies
   install-pre-commit                    Install pre-commit hooks
   lint                                  Run pre-commit hooks
 
-  run-server                            Run the django server
+  run/server                            Run the django server
   migrate                               Apply migrations
   migrations                            Create migrations
   superuser                             Create superuser
   app <name>                            Create a new app
+  shell                                 Run the django shell
 
   local-settings                        Create local settings file
   update                                Install dependencies, apply migrations and install pre-commit hooks
